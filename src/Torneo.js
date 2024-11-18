@@ -58,13 +58,13 @@ class Torneo {
                     const luchador2 = participantes[i + 1];
                     const ganador = simularBatalla(luchador1, luchador2);
                     siguienteRonda.push(ganador);
+                    if(participantes.length!==2){
+                        console.log(`\n${participantes[0].getNombre()} recupera su vida, vuelve a las estadisticas iniciales y vuelve a tener su habilidad especial disponible\n\n\n`);
+                    }
                 }
             
                 participantes = siguienteRonda;
                 ronda++;
-                if(participantes.length!==1){
-                    console.log(`\n${participantes[0].getNombre()} recupera su vida, vuelve a las estadisticas iniciales y vuelve a tener su habilidad especial disponible\n\n\n`);
-                }
            }
             // El único luchador restante es el campeón
             const campeón = participantes[0];
