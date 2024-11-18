@@ -20,10 +20,17 @@ describe('Clase Torneo', () => {
     });
 
     test('Validación de número de luchadores: potencia de 2', () => {
-        expect(() => new Torneo(luchadores)).not.toThrow();
+        jest.spyOn(console, 'log').mockImplementation(() => {});
+        // Caso válido: número de luchadores es potencia de 2
+        const torneo = new Torneo(luchadores);
+        expect(torneo.getLuchadores()).toEqual(luchadores);
+        expect(console.log).toHaveBeenCalledTimes(0);
 
+        // Caso inválido: número de luchadores no es potencia de 2
         const luchadoresNoPotencia = [...luchadores, new Luchador('Luchador5', 60, 70, 50)];
-        expect(() => new Torneo(luchadoresNoPotencia)).toThrow('El número de luchadores debe ser una potencia de 2.');
+        const torneoNoValido = new Torneo(luchadoresNoPotencia);
+        expect(torneoNoValido.getLuchadores()).toEqual([]);
+        expect(console.log).toHaveBeenCalledWith(expect.stringContaining("El número de luchadores debe ser una potencia de 2."));
     });
 
     test('Emparejamiento aleatorio y avance de ganadores', () => {

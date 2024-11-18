@@ -128,15 +128,12 @@ function simularBatalla(luchador1, luchador2) {
 
     // Determinar al ganador
     const ganador = luchador1.estaVivo() ? luchador1 : luchador2;
-    console.log(`El ganador de la batalla es ${ganador.getNombre()}!\n`);
+    console.log(`El ganador de la batalla es ${ganador.getNombre()}!`);
     // Al final de la ronda, restablecemos la vida y destransformamos a los Saiyans
     if (ganador === luchador1){
         resetearEstado(luchador1, saludInicialLuchador1);
     }else{
         resetearEstado(luchador2, saludInicialLuchador2);
-    }
-    if (ganador instanceof Namekian) {
-        console.log(`curacion usada: ${ganador.getRegeneracionUsada()}`);
     }
     return ganador;
 }
