@@ -13,7 +13,7 @@ const luchadores = [
     new Saiyan('Trunks', 24, 42, 40),
     new Namekian('Piccolo', 25, 35, 50),
     new Namekian('Dende', 22, 30, 45),
-    new Earthling('Krillin', 22, 60, 100),
+    new Earthling('Krillin', 22, 60, 30),
     new Earthling('Yamcha', 23, 38, 33)
 ];
 

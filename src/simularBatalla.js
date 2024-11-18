@@ -92,7 +92,7 @@ function resetearEstado(luchador, saludInicial) {
 
     if (luchador instanceof Earthling && luchador.getTecnicaUsada()) {
         luchador.setTecnicaUsada(false);
-        this.setAtaque(this.getAtaque()/1.4);
+        luchador.setAtaque(luchador.getAtaque()/1.4);
     }
 }
 
